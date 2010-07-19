@@ -19,6 +19,8 @@
 		2893B1B0114F14E60094356F /* tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 2893B1AD114F14E60094356F /* tap.png */; };
 		7E9551A811765C360003D25C /* GestureRecognizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9551A411765C360003D25C /* GestureRecognizerViewController.xib */; };
 		7E9551A911765C360003D25C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9551A611765C360003D25C /* MainWindow.xib */; };
+		FA574F8111F4C85400A5D98D /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA574F7F11F4C85400A5D98D /* SlideViewController.m */; };
+		FA574F8211F4C85400A5D98D /* SlideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA574F8011F4C85400A5D98D /* SlideViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,9 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E9551A511765C360003D25C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GestureRecognizerViewController.xib; sourceTree = "<group>"; };
 		7E9551A711765C360003D25C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		FA574F7E11F4C85400A5D98D /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideViewController.h; path = ../SlideViewController.h; sourceTree = "<group>"; };
+		FA574F7F11F4C85400A5D98D /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideViewController.m; path = ../SlideViewController.m; sourceTree = "<group>"; };
+		FA574F8011F4C85400A5D98D /* SlideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +63,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				FA574F7E11F4C85400A5D98D /* SlideViewController.h */,
+				FA574F7F11F4C85400A5D98D /* SlideViewController.m */,
 				2893B1A1114F14CA0094356F /* GestureRecognizerViewController.h */,
 				2893B1A2114F14CA0094356F /* GestureRecognizerViewController.m */,
 				2893B1A3114F14CA0094356F /* SimpleGestureRecognizersAppDelegate.h */,
@@ -105,6 +112,7 @@
 				2893B1AC114F14E60094356F /* swipe.png */,
 				2893B1AD114F14E60094356F /* tap.png */,
 				2893B1B2114F14FE0094356F /* iPadGestureExperiments-Info.plist */,
+				FA574F8011F4C85400A5D98D /* SlideViewController.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -174,6 +182,7 @@
 				2893B1B0114F14E60094356F /* tap.png in Resources */,
 				7E9551A811765C360003D25C /* GestureRecognizerViewController.xib in Resources */,
 				7E9551A911765C360003D25C /* MainWindow.xib in Resources */,
+				FA574F8211F4C85400A5D98D /* SlideViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,6 +196,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				2893B1A5114F14CA0094356F /* GestureRecognizerViewController.m in Sources */,
 				2893B1A6114F14CA0094356F /* SimpleGestureRecognizersAppDelegate.m in Sources */,
+				FA574F8111F4C85400A5D98D /* SlideViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

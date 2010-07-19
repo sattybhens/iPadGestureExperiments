@@ -50,14 +50,17 @@
 #import <UIKit/UIKit.h>
 
 @class GestureRecognizerViewController;
+@class SlideViewController;
 
 @interface SimpleGestureRecognizersAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
     GestureRecognizerViewController *viewController;
+    SlideViewController *slideViewController;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet GestureRecognizerViewController *viewController;
+@property (nonatomic, retain) IBOutlet SlideViewController *slideViewController;
 
 @end
 
