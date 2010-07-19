@@ -9,8 +9,16 @@
 #import <UIKit/UIKit.h>
 
 
-@interface SlideViewController : UIViewController {
-
+@interface SlideViewController : UIViewController <UIGestureRecognizerDelegate> {
+	UITapGestureRecognizer *tapRecognizer;
+	UISwipeGestureRecognizer *swipeRecognizer;
+	UIImageView *slideImageView;
+	UIImageView *tapImageView;
 }
+
+@property (nonatomic, retain) UITapGestureRecognizer *tapRecognizer;
+@property (nonatomic, retain) UISwipeGestureRecognizer *swipeRecognizer;
+@property (nonatomic, retain) UIImageView *slideImageView;
+@property (nonatomic, retain) UIImageView *tapImageView;
 
 @end
