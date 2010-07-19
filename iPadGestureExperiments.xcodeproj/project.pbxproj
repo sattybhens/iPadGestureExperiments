@@ -21,6 +21,14 @@
 		7E9551A911765C360003D25C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9551A611765C360003D25C /* MainWindow.xib */; };
 		FA574F8111F4C85400A5D98D /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA574F7F11F4C85400A5D98D /* SlideViewController.m */; };
 		FA574F8211F4C85400A5D98D /* SlideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA574F8011F4C85400A5D98D /* SlideViewController.xib */; };
+		FA574F9A11F4E54300A5D98D /* iPadGesturesExperiments.pptx in Resources */ = {isa = PBXBuildFile; fileRef = FA574F9911F4E54300A5D98D /* iPadGesturesExperiments.pptx */; };
+		FA574FA411F4E55300A5D98D /* Slide7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574F9D11F4E55300A5D98D /* Slide7.jpg */; };
+		FA574FA511F4E55300A5D98D /* Slide6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574F9E11F4E55300A5D98D /* Slide6.jpg */; };
+		FA574FA611F4E55300A5D98D /* Slide5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574F9F11F4E55300A5D98D /* Slide5.jpg */; };
+		FA574FA711F4E55300A5D98D /* Slide4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA011F4E55300A5D98D /* Slide4.jpg */; };
+		FA574FA811F4E55300A5D98D /* Slide3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA111F4E55300A5D98D /* Slide3.jpg */; };
+		FA574FA911F4E55300A5D98D /* Slide2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA211F4E55300A5D98D /* Slide2.jpg */; };
+		FA574FAA11F4E55300A5D98D /* Slide1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA311F4E55300A5D98D /* Slide1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +52,14 @@
 		FA574F7E11F4C85400A5D98D /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideViewController.h; path = ../SlideViewController.h; sourceTree = "<group>"; };
 		FA574F7F11F4C85400A5D98D /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideViewController.m; path = ../SlideViewController.m; sourceTree = "<group>"; };
 		FA574F8011F4C85400A5D98D /* SlideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideViewController.xib; sourceTree = "<group>"; };
+		FA574F9911F4E54300A5D98D /* iPadGesturesExperiments.pptx */ = {isa = PBXFileReference; lastKnownFileType = file; path = iPadGesturesExperiments.pptx; sourceTree = "<group>"; };
+		FA574F9D11F4E55300A5D98D /* Slide7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide7.jpg; sourceTree = "<group>"; };
+		FA574F9E11F4E55300A5D98D /* Slide6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide6.jpg; sourceTree = "<group>"; };
+		FA574F9F11F4E55300A5D98D /* Slide5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide5.jpg; sourceTree = "<group>"; };
+		FA574FA011F4E55300A5D98D /* Slide4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide4.jpg; sourceTree = "<group>"; };
+		FA574FA111F4E55300A5D98D /* Slide3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide3.jpg; sourceTree = "<group>"; };
+		FA574FA211F4E55300A5D98D /* Slide2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide2.jpg; sourceTree = "<group>"; };
+		FA574FA311F4E55300A5D98D /* Slide1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +129,14 @@
 				2893B1AD114F14E60094356F /* tap.png */,
 				2893B1B2114F14FE0094356F /* iPadGestureExperiments-Info.plist */,
 				FA574F8011F4C85400A5D98D /* SlideViewController.xib */,
+				FA574F9D11F4E55300A5D98D /* Slide7.jpg */,
+				FA574F9E11F4E55300A5D98D /* Slide6.jpg */,
+				FA574F9F11F4E55300A5D98D /* Slide5.jpg */,
+				FA574FA011F4E55300A5D98D /* Slide4.jpg */,
+				FA574FA111F4E55300A5D98D /* Slide3.jpg */,
+				FA574FA211F4E55300A5D98D /* Slide2.jpg */,
+				FA574FA311F4E55300A5D98D /* Slide1.jpg */,
+				FA574F9911F4E54300A5D98D /* iPadGesturesExperiments.pptx */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -183,6 +207,14 @@
 				7E9551A811765C360003D25C /* GestureRecognizerViewController.xib in Resources */,
 				7E9551A911765C360003D25C /* MainWindow.xib in Resources */,
 				FA574F8211F4C85400A5D98D /* SlideViewController.xib in Resources */,
+				FA574F9A11F4E54300A5D98D /* iPadGesturesExperiments.pptx in Resources */,
+				FA574FA411F4E55300A5D98D /* Slide7.jpg in Resources */,
+				FA574FA511F4E55300A5D98D /* Slide6.jpg in Resources */,
+				FA574FA611F4E55300A5D98D /* Slide5.jpg in Resources */,
+				FA574FA711F4E55300A5D98D /* Slide4.jpg in Resources */,
+				FA574FA811F4E55300A5D98D /* Slide3.jpg in Resources */,
+				FA574FA911F4E55300A5D98D /* Slide2.jpg in Resources */,
+				FA574FAA11F4E55300A5D98D /* Slide1.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
