@@ -48,28 +48,28 @@
  */
 
 #import "SimpleGestureRecognizersAppDelegate.h"
-#import "GestureRecognizerViewController.h"
-#import "SlideViewController.h"
+#import "BaseViewController.h"
 
 @implementation SimpleGestureRecognizersAppDelegate
 
-@synthesize window;
-@synthesize viewController;
-@synthesize slideViewController;
+@synthesize window, baseViewController;
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     
     // Display the view controller's view in the application's window. 
-    [window addSubview:viewController.view];
-    [window addSubview:slideViewController.view];
+    // [window addSubview:slideViewController.view];
+    [window addSubview:baseViewController.view];
+	
     [window makeKeyAndVisible];
 }
 
 
 - (void)dealloc {
-    [viewController release];
-    [slideViewController release];
+
+	/* WHY do I need to release when I never actually created this? */
+    [baseViewController release];
+	
     [window release];
     [super dealloc];
 }

@@ -29,6 +29,10 @@
 		FA574FA811F4E55300A5D98D /* Slide3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA111F4E55300A5D98D /* Slide3.jpg */; };
 		FA574FA911F4E55300A5D98D /* Slide2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA211F4E55300A5D98D /* Slide2.jpg */; };
 		FA574FAA11F4E55300A5D98D /* Slide1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA311F4E55300A5D98D /* Slide1.jpg */; };
+		FAA5BEFE11F5EC3E0055033F /* AppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5BEFC11F5EC3E0055033F /* AppsViewController.m */; };
+		FAA5BEFF11F5EC3E0055033F /* AppsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */; };
+		FAA5BF7411F615850055033F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5BF7211F615850055033F /* BaseViewController.m */; };
+		FAA5BF7511F615850055033F /* BaseViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA5BF7311F615850055033F /* BaseViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,12 @@
 		FA574FA111F4E55300A5D98D /* Slide3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide3.jpg; sourceTree = "<group>"; };
 		FA574FA211F4E55300A5D98D /* Slide2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide2.jpg; sourceTree = "<group>"; };
 		FA574FA311F4E55300A5D98D /* Slide1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide1.jpg; sourceTree = "<group>"; };
+		FAA5BEFB11F5EC3E0055033F /* AppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsViewController.h; sourceTree = "<group>"; };
+		FAA5BEFC11F5EC3E0055033F /* AppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsViewController.m; sourceTree = "<group>"; };
+		FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsViewController.xib; sourceTree = "<group>"; };
+		FAA5BF7111F615850055033F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		FAA5BF7211F615850055033F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		FAA5BF7311F615850055033F /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +95,12 @@
 				2893B1A2114F14CA0094356F /* GestureRecognizerViewController.m */,
 				2893B1A3114F14CA0094356F /* SimpleGestureRecognizersAppDelegate.h */,
 				2893B1A4114F14CA0094356F /* SimpleGestureRecognizersAppDelegate.m */,
+				FAA5BF7111F615850055033F /* BaseViewController.h */,
+				FAA5BF7211F615850055033F /* BaseViewController.m */,
+				FAA5BF7311F615850055033F /* BaseViewController.xib */,
+				FAA5BEFB11F5EC3E0055033F /* AppsViewController.h */,
+				FAA5BEFC11F5EC3E0055033F /* AppsViewController.m */,
+				FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -215,6 +231,8 @@
 				FA574FA811F4E55300A5D98D /* Slide3.jpg in Resources */,
 				FA574FA911F4E55300A5D98D /* Slide2.jpg in Resources */,
 				FA574FAA11F4E55300A5D98D /* Slide1.jpg in Resources */,
+				FAA5BEFF11F5EC3E0055033F /* AppsViewController.xib in Resources */,
+				FAA5BF7511F615850055033F /* BaseViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +247,8 @@
 				2893B1A5114F14CA0094356F /* GestureRecognizerViewController.m in Sources */,
 				2893B1A6114F14CA0094356F /* SimpleGestureRecognizersAppDelegate.m in Sources */,
 				FA574F8111F4C85400A5D98D /* SlideViewController.m in Sources */,
+				FAA5BEFE11F5EC3E0055033F /* AppsViewController.m in Sources */,
+				FAA5BF7411F615850055033F /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
