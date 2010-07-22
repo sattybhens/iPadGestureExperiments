@@ -1,9 +1,9 @@
 
 /*
-     File: SimpleGestureRecognizersAppDelegate.m
+ File: SimpleGestureRecognizersAppDelegate.m
  Abstract: Simple application delegate that displays the application's window. 
  
-  Version: 1.2
+ Version: 1.2
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -56,22 +56,20 @@
 
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
-    
-    // Display the view controller's view in the application's window. 
-    // [window addSubview:slideViewController.view];
-    [window addSubview:baseViewController.view];
 	
-    [window makeKeyAndVisible];
+	// Display the view controller's view in the application's window. 
+	[window addSubview:baseViewController.view];
+	[window makeKeyAndVisible];
 }
 
 
 - (void)dealloc {
-
-	/* WHY do I need to release when I never actually created this? */
-    [baseViewController release];
 	
-    [window release];
-    [super dealloc];
+	/* WHY do I need to release when I never actually created this? */
+	[baseViewController release];
+	
+	[window release];
+	[super dealloc];
 }
 
 

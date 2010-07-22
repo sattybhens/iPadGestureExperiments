@@ -14,11 +14,14 @@
 	UISwipeGestureRecognizer *swipeRecognizer;
 	UIImageView *slideImageView;
 	UIImageView *tapImageView;
+	SlidePopUpViewController *slidePopUpViewController;
 }
 
 @property (nonatomic, retain) UITapGestureRecognizer *tapRecognizer;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeRecognizer;
 @property (nonatomic, retain) UIImageView *slideImageView;
 @property (nonatomic, retain) UIImageView *tapImageView;
+
+@property (nonatomic, retain) IBOutlet UIViewController *slidePopUpViewController;
 
 @end
