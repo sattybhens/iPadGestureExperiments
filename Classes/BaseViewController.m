@@ -11,7 +11,6 @@
 #import "AppsViewController.h"
 #import "SlideViewController.h"
 
-
 @implementation BaseViewController
 
 @synthesize slideViewController, appsViewController;
@@ -31,13 +30,15 @@
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+  
+  [self.view addSubview:self.appsViewController.view];
+  [self.view addSubview:self.slideViewController.view];
 	
 	[[NSNotificationCenter defaultCenter] addObserver:self
 										  selector:@selector(orientationChanged:)
-									      name:@"UIDeviceOrientationDidChangeNotification"
+                      name:@"UIDeviceOrientationDidChangeNotification"
 										  object:nil];
 }
-
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Overriden to allow any orientation.
@@ -48,22 +49,15 @@
 - (void)orientationChanged:(NSNotification *)notification {
 	
 	UIDeviceOrientation deviceOrientation = [UIDevice currentDevice].orientation;
-	
-	if (UIDeviceOrientationIsPortrait(deviceOrientation))
-	{
-		NSLog(@"orientationChanged to Portrait");
-//		[[self modalViewController] dismissModalViewControllerAnimated:YES];
-//		[self presentModalViewController:self.appsViewController animated:YES];
-	}
-	else
-	{
-		NSLog(@"orientationChanged to Landscape");
-//		[[self modalViewController] dismissModalViewControllerAnimated:YES];
-//		[self presentModalViewController:self.slideViewController animated:YES];
-	}
-	
-}
+	BOOL isPortrait = UIDeviceOrientationIsPortrait(deviceOrientation);
 
+  if (isPortrait)
+   {
+     [self.view bringSubviewToFront:self.appsViewController.view];
+     self.appsViewController.label.text = [ [NSDate date] descriptionWithLocale: @"yyyy-MM-dd" ];
+   } else
+     [self.view bringSubviewToFront:self.slideViewController.view];
+}
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -71,7 +65,6 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
-
 
 - (void)viewDidUnload {
     [super viewDidUnload];

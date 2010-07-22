@@ -14,7 +14,7 @@
 
 @interface BaseViewController : UIViewController {
 	AppsViewController *appsViewController;
-    SlideViewController *slideViewController;
+  SlideViewController *slideViewController;
 }
 
 @property (nonatomic, retain) IBOutlet AppsViewController *appsViewController;

@@ -66,10 +66,10 @@
 		FA574FA311F4E55300A5D98D /* Slide1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide1.jpg; sourceTree = "<group>"; };
 		FAA5BEFB11F5EC3E0055033F /* AppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsViewController.h; sourceTree = "<group>"; };
 		FAA5BEFC11F5EC3E0055033F /* AppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsViewController.m; sourceTree = "<group>"; };
-		FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppsViewController.xib; sourceTree = "<group>"; };
+		FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AppsViewController.xib; path = Classes/AppsViewController.xib; sourceTree = "<group>"; };
 		FAA5BF7111F615850055033F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		FAA5BF7211F615850055033F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		FAA5BF7311F615850055033F /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BaseViewController.xib; sourceTree = "<group>"; };
+		FAA5BF7311F615850055033F /* BaseViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = BaseViewController.xib; path = Classes/BaseViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,10 +97,8 @@
 				2893B1A4114F14CA0094356F /* SimpleGestureRecognizersAppDelegate.m */,
 				FAA5BF7111F615850055033F /* BaseViewController.h */,
 				FAA5BF7211F615850055033F /* BaseViewController.m */,
-				FAA5BF7311F615850055033F /* BaseViewController.xib */,
 				FAA5BEFB11F5EC3E0055033F /* AppsViewController.h */,
 				FAA5BEFC11F5EC3E0055033F /* AppsViewController.m */,
-				FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -138,13 +136,15 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				7E9551A411765C360003D25C /* GestureRecognizerViewController.xib */,
 				7E9551A611765C360003D25C /* MainWindow.xib */,
+				FAA5BF7311F615850055033F /* BaseViewController.xib */,
+				FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */,
+				FA574F8011F4C85400A5D98D /* SlideViewController.xib */,
+				7E9551A411765C360003D25C /* GestureRecognizerViewController.xib */,
 				2893B1AB114F14E60094356F /* rotation.png */,
 				2893B1AC114F14E60094356F /* swipe.png */,
 				2893B1AD114F14E60094356F /* tap.png */,
 				2893B1B2114F14FE0094356F /* iPadGestureExperiments-Info.plist */,
-				FA574F8011F4C85400A5D98D /* SlideViewController.xib */,
 				FA574F9D11F4E55300A5D98D /* Slide7.jpg */,
 				FA574F9E11F4E55300A5D98D /* Slide6.jpg */,
 				FA574F9F11F4E55300A5D98D /* Slide5.jpg */,

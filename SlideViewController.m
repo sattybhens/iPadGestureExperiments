@@ -28,7 +28,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	
+  self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
+  
 	UIGestureRecognizer *recognizer;
 	
 	recognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapFrom:)];
