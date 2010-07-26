@@ -29,11 +29,6 @@
 		FA574FA811F4E55300A5D98D /* Slide3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA111F4E55300A5D98D /* Slide3.jpg */; };
 		FA574FA911F4E55300A5D98D /* Slide2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA211F4E55300A5D98D /* Slide2.jpg */; };
 		FA574FAA11F4E55300A5D98D /* Slide1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FA574FA311F4E55300A5D98D /* Slide1.jpg */; };
-		FA5E095011FCC8C400FD987F /* Page24.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5E094E11FCC8C400FD987F /* Page24.png */; };
-		FA5E095111FCC8C400FD987F /* Page1.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5E094F11FCC8C400FD987F /* Page1.png */; };
-		FA5E097811FCD0B100FD987F /* right-tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5E097611FCD0B100FD987F /* right-tracker.png */; };
-		FA5E097911FCD0B100FD987F /* left-tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5E097711FCD0B100FD987F /* left-tracker.png */; };
-		FA5E09D111FD1F2700FD987F /* tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = FA5E09D011FD1F2700FD987F /* tracker.png */; };
 		FAA5BEFE11F5EC3E0055033F /* AppsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5BEFC11F5EC3E0055033F /* AppsViewController.m */; };
 		FAA5BEFF11F5EC3E0055033F /* AppsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */; };
 		FAA5BF7411F615850055033F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA5BF7211F615850055033F /* BaseViewController.m */; };
@@ -71,11 +66,6 @@
 		FA574FA111F4E55300A5D98D /* Slide3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide3.jpg; sourceTree = "<group>"; };
 		FA574FA211F4E55300A5D98D /* Slide2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide2.jpg; sourceTree = "<group>"; };
 		FA574FA311F4E55300A5D98D /* Slide1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Slide1.jpg; sourceTree = "<group>"; };
-		FA5E094E11FCC8C400FD987F /* Page24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Page24.png; path = ../../../../Desktop/Page24.png; sourceTree = SOURCE_ROOT; };
-		FA5E094F11FCC8C400FD987F /* Page1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Page1.png; path = ../../../../Desktop/Page1.png; sourceTree = SOURCE_ROOT; };
-		FA5E097611FCD0B100FD987F /* right-tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "right-tracker.png"; path = "../../../../Desktop/right-tracker.png"; sourceTree = SOURCE_ROOT; };
-		FA5E097711FCD0B100FD987F /* left-tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "left-tracker.png"; path = "../../../../Desktop/left-tracker.png"; sourceTree = SOURCE_ROOT; };
-		FA5E09D011FD1F2700FD987F /* tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tracker.png; path = ../../../../Desktop/tracker.png; sourceTree = SOURCE_ROOT; };
 		FAA5BEFB11F5EC3E0055033F /* AppsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppsViewController.h; sourceTree = "<group>"; };
 		FAA5BEFC11F5EC3E0055033F /* AppsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppsViewController.m; sourceTree = "<group>"; };
 		FAA5BEFD11F5EC3E0055033F /* AppsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = AppsViewController.xib; path = Classes/AppsViewController.xib; sourceTree = "<group>"; };
@@ -104,15 +94,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				FA5E09D011FD1F2700FD987F /* tracker.png */,
-				FA5E097611FCD0B100FD987F /* right-tracker.png */,
-				FA5E097711FCD0B100FD987F /* left-tracker.png */,
 				FA574F7E11F4C85400A5D98D /* SlideViewController.h */,
 				FAE5273011FB46C800329AFB /* ThumbnailViewController.h */,
 				FAE5273111FB46C800329AFB /* ThumbnailViewController.m */,
 				FA574F7F11F4C85400A5D98D /* SlideViewController.m */,
-				FA5E094E11FCC8C400FD987F /* Page24.png */,
-				FA5E094F11FCC8C400FD987F /* Page1.png */,
 				2893B1A1114F14CA0094356F /* GestureRecognizerViewController.h */,
 				2893B1A2114F14CA0094356F /* GestureRecognizerViewController.m */,
 				2893B1A3114F14CA0094356F /* SimpleGestureRecognizersAppDelegate.h */,
@@ -257,11 +242,6 @@
 				FAA5BEFF11F5EC3E0055033F /* AppsViewController.xib in Resources */,
 				FAA5BF7511F615850055033F /* BaseViewController.xib in Resources */,
 				FAE5273411FB46C800329AFB /* ThumbnailViewController.xib in Resources */,
-				FA5E095011FCC8C400FD987F /* Page24.png in Resources */,
-				FA5E095111FCC8C400FD987F /* Page1.png in Resources */,
-				FA5E097811FCD0B100FD987F /* right-tracker.png in Resources */,
-				FA5E097911FCD0B100FD987F /* left-tracker.png in Resources */,
-				FA5E09D111FD1F2700FD987F /* tracker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

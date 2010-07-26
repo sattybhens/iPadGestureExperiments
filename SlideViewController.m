@@ -16,6 +16,7 @@
 
 @synthesize swipeRecognizer, tapRecognizer, slideImageView, tapImageView, trackSlider, triggerPopOver;
 @synthesize thumbView, thumbViewLabel, thumbNailImage;
+@synthesize sliderMoving, thumb, pop;
 
 #pragma mark -
 #pragma mark Responding to UISlider
@@ -23,38 +24,74 @@
 -(IBAction) endSlideAction: (id) sender {
   UISlider *slider = (UISlider *)sender;
   NSLog(@"endSlideAction %.1f", slider.value);
-  thumbView.hidden = YES;
+  //thumbView.hidden = YES;
+	sliderMoving = NO;
+	
+	if (pop.popoverVisible == YES) {
+		[pop dismissPopoverAnimated:NO];
+		NSLog(@"Dismissing");
+	}
+	
+
 }
 
 -(IBAction) startSlideAction: (id) sender {
   UISlider *slider = (UISlider *)sender;
   NSLog(@"startSlideAction %.1f", slider.value);
-  thumbView.hidden = NO;
+  //thumbView.hidden = NO;
+	
+	sliderMoving = YES;
+
 }
 
 -(IBAction) sliderChanged: (id) sender {
   UISlider *slider = (UISlider *)sender;
   
+	//NSLog(@"Popped");
+  
+	if (pop.popoverVisible == YES) {
+		[pop dismissPopoverAnimated:NO];
+		NSLog(@"Dismissing");
+	}
+		
+	CGRect popoverRect = [slider frame];
+	NSLog(@"%@", NSStringFromCGRect(popoverRect));
+	popoverRect.origin.x += (slider.value * 13);
+	popoverRect.size.width = 1;
+	[pop presentPopoverFromRect:popoverRect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+	
+	
   // NSLog(@"MinimumValue %.1f", slider.minimumValue);
   // NSLog(@"MaximumValue %.1f", slider.maximumValue);
   thumbViewLabel.text = [NSString stringWithFormat:@"%.0f of 30", slider.value];
   
-  int r = (rand() % 6) +1;
-  NSString  *imageName = [NSString stringWithFormat:@"Slide%d.jpg",r];  
+  //int r = (rand() % 6) +1;
+  //NSString  *imageName = [NSString stringWithFormat:@"Slide%d.jpg",r];  
 
-  thumbNailImage.image = [UIImage imageNamed:imageName];
+  //thumbNailImage.image = [UIImage imageNamed:imageName];
 }
 
 
 #pragma mark -
 #pragma mark Creating a UIPopOver
 
+- (BOOL)popoverControllerShouldDismissPopover:(UIPopoverController *)popoverController {	
+  NSLog(@"popoverControllerShouldDismissPopover NO");
+	return YES;
+}
+
+- (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
+  NSLog(@"popoverControllerDidDismissPopover");
+	
+}
+
 -(IBAction) showPopOver: (id) sender {
   
   NSLog(@"Popped");
   UIButton *btn = sender;
+  UISlider *slider = sender;
   
-  ThumbnailViewController *thumb = [[ThumbnailViewController alloc] initWithNibName:@"ThumbnailViewController" bundle:nil];
+  //ThumbnailViewController *thumb = [[ThumbnailViewController alloc] initWithNibName:@"ThumbnailViewController" bundle:nil];
   //thumb.delegate = self; // setup code for your embedded view controller
   
   UIPopoverController *pop = [[UIPopoverController alloc] initWithContentViewController:thumb];
@@ -62,10 +99,8 @@
   // pop delegate = self; if UIPopOverControllerDelegate protocol
   [pop setPopoverContentSize:thumb.view.frame.size];
 
-  CGRect popoverRect = [btn frame];
-  [pop presentPopoverFromRect:popoverRect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
-
-  [thumb release];
+  CGRect popoverRect = [slider frame];
+  [pop presentPopoverFromRect:popoverRect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
 }
 
 
@@ -84,6 +119,15 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
+	sliderMoving = NO;
+	
+	thumb = [[ThumbnailViewController alloc] initWithNibName:@"ThumbnailViewController" bundle:nil];
+	
+	pop = [[UIPopoverController alloc] initWithContentViewController:thumb];
+  pop.delegate = self; //if UIPopOverControllerDelegate protocol
+	[pop setPopoverContentSize:thumb.view.frame.size];
+
+
   self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
   
 	UIGestureRecognizer *recognizer;
@@ -120,9 +164,9 @@
   //[trackSlider setMinimumTrackImage: sliderLeftTrackImage forState: UIControlStateNormal];
   //[trackSlider setMaximumTrackImage: sliderRightTrackImage forState: UIControlStateNormal];
   
-  UIImage *trackImage = [UIImage imageNamed: @"tracker.png"];
-  [trackSlider setThumbImage: trackImage forState: UIControlStateNormal];
-  [trackImage release];
+  // UIImage *trackImage = [UIImage imageNamed: @"tracker.png"];
+  // [trackSlider setThumbImage: trackImage forState: UIControlStateNormal];
+  // [trackImage release];
   
 }
 
@@ -205,6 +249,8 @@
 	[swipeRecognizer release];
 	[slideImageView release];
 	[tapImageView release];
+	[pop release];
+	[thumb release];
 	[super dealloc];
 }
 
