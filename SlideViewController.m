@@ -7,11 +7,67 @@
 //
 
 #import "SlideViewController.h"
+#import "ThumbnailViewController.h"
 
+
+#include <stdlib.h>
 
 @implementation SlideViewController
 
-@synthesize swipeRecognizer, tapRecognizer, slideImageView, tapImageView, slidePopUpViewController;
+@synthesize swipeRecognizer, tapRecognizer, slideImageView, tapImageView, trackSlider, triggerPopOver;
+@synthesize thumbView, thumbViewLabel, thumbNailImage;
+
+#pragma mark -
+#pragma mark Responding to UISlider
+
+-(IBAction) endSlideAction: (id) sender {
+  UISlider *slider = (UISlider *)sender;
+  NSLog(@"endSlideAction %.1f", slider.value);
+  thumbView.hidden = YES;
+}
+
+-(IBAction) startSlideAction: (id) sender {
+  UISlider *slider = (UISlider *)sender;
+  NSLog(@"startSlideAction %.1f", slider.value);
+  thumbView.hidden = NO;
+}
+
+-(IBAction) sliderChanged: (id) sender {
+  UISlider *slider = (UISlider *)sender;
+  
+  // NSLog(@"MinimumValue %.1f", slider.minimumValue);
+  // NSLog(@"MaximumValue %.1f", slider.maximumValue);
+  thumbViewLabel.text = [NSString stringWithFormat:@"%.0f of 30", slider.value];
+  
+  int r = (rand() % 6) +1;
+  NSString  *imageName = [NSString stringWithFormat:@"Slide%d.jpg",r];  
+
+  thumbNailImage.image = [UIImage imageNamed:imageName];
+}
+
+
+#pragma mark -
+#pragma mark Creating a UIPopOver
+
+-(IBAction) showPopOver: (id) sender {
+  
+  NSLog(@"Popped");
+  UIButton *btn = sender;
+  
+  ThumbnailViewController *thumb = [[ThumbnailViewController alloc] initWithNibName:@"ThumbnailViewController" bundle:nil];
+  //thumb.delegate = self; // setup code for your embedded view controller
+  
+  UIPopoverController *pop = [[UIPopoverController alloc] initWithContentViewController:thumb];
+  
+  // pop delegate = self; if UIPopOverControllerDelegate protocol
+  [pop setPopoverContentSize:thumb.view.frame.size];
+
+  CGRect popoverRect = [btn frame];
+  [pop presentPopoverFromRect:popoverRect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionUp animated:YES];
+
+  [thumb release];
+}
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -39,21 +95,14 @@
 	[recognizer release];
 	
 	
-	recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
-	[self.view addGestureRecognizer:recognizer];
-	[recognizer release];
+	// recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+	// [self.view addGestureRecognizer:recognizer];
+	// [recognizer release];
 	
 	recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationFrom:)];
 	[self.view addGestureRecognizer:recognizer];
 	[recognizer release];
-	
-	
-	UIImageView *aSlideImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0, 0.0, 960.0, 720.0)];
-	aSlideImageView.contentMode = UIViewContentModeCenter;
-	self.slideImageView = aSlideImageView;
-	[aSlideImageView release];
-	[self.view addSubview:slideImageView];
-	
+			
 	slideImageView.image = [UIImage imageNamed:@"Slide1.jpg"];
 	slideImageView.alpha = 1.0;
 	
@@ -65,6 +114,16 @@
 	self.tapImageView = anImageView;
 	[anImageView release];
 	[self.view addSubview:tapImageView];
+
+  //UIImage *sliderLeftTrackImage = [[UIImage imageNamed: @"left-tracker.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+  //UIImage *sliderRightTrackImage = [[UIImage imageNamed: @"right-tracker.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+  //[trackSlider setMinimumTrackImage: sliderLeftTrackImage forState: UIControlStateNormal];
+  //[trackSlider setMaximumTrackImage: sliderRightTrackImage forState: UIControlStateNormal];
+  
+  UIImage *trackImage = [UIImage imageNamed: @"tracker.png"];
+  [trackSlider setThumbImage: trackImage forState: UIControlStateNormal];
+  [trackImage release];
+  
 }
 
 
@@ -115,11 +174,26 @@
 	
 	CGPoint location = [recognizer locationInView:self.view];
 	[self showImageWithText:@"tap" atPoint:location];
-	
-	[UIView beginAnimations:nil context:NULL];
-	[UIView setAnimationDuration:0.5];
 	tapImageView.alpha = 0.0;
-	[UIView commitAnimations];
+	  
+  CGContextRef context = UIGraphicsGetCurrentContext();
+  [UIView beginAnimations:nil context:context];
+  
+  //[UIView setAnimationTransition: UIViewAnimationTransitionFlipFromLeft forView:self.view cache:YES];
+  
+  // -- These don't work on the simulator and the curl up will turn into a fade -- //
+  //[UIView setAnimationTransition: UIViewAnimationTransitionCurlUp forView:[self superview] cache:YES];
+  //[UIView setAnimationTransition: UIViewAnimationTransitionCurlDown forView:[self superview] cache:YES];
+  
+  //[UIView setAnimationCurve:UIViewAnimationCurveEaseIn];
+  [UIView setAnimationDuration:0.8];
+  
+  // Below assumes you have two subviews that you're trying to transition between
+  slideImageView.alpha = 0.3;
+  slideImageView.image = [UIImage imageNamed:@"Slide2.jpg"];
+  slideImageView.alpha = 1.0;
+
+  [UIView commitAnimations];
 }
 
 #pragma mark -

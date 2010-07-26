@@ -1,15 +1,15 @@
-    //
-//  SlidePopUpViewController.m
+//
+//  thumbnailViewController.m
 //  iPadGestureExperiments
 //
-//  Created by Satty Bhens on 7/22/10.
+//  Created by Satty  Bhens on 7/24/10.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "SlidePopUpViewController.h"
+#import "ThumbnailViewController.h"
 
 
-@implementation SlidePopUpViewController
+@implementation ThumbnailViewController
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -28,12 +28,13 @@
 }
 */
 
-
+/*
+// Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Overriden to allow any orientation.
-    return YES;
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
-
+*/
 
 - (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
@@ -41,7 +42,6 @@
     
     // Release any cached data, images, etc that aren't in use.
 }
-
 
 - (void)viewDidUnload {
     [super viewDidUnload];

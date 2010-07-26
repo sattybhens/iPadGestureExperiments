@@ -14,14 +14,28 @@
 	UISwipeGestureRecognizer *swipeRecognizer;
 	UIImageView *slideImageView;
 	UIImageView *tapImageView;
-	SlidePopUpViewController *slidePopUpViewController;
+  UISlider *trackSlider;
+  UIButton *triggerPopOver;
+  UIView *thumbView;
+  UILabel *thumbViewLabel;
+  UIImageView *thumbNailImage;
 }
 
 @property (nonatomic, retain) UITapGestureRecognizer *tapRecognizer;
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeRecognizer;
-@property (nonatomic, retain) UIImageView *slideImageView;
 @property (nonatomic, retain) UIImageView *tapImageView;
 
-@property (nonatomic, retain) IBOutlet UIViewController *slidePopUpViewController;
+@property (nonatomic, retain) IBOutlet UIImageView *slideImageView;
+@property (nonatomic, retain) IBOutlet UISlider *trackSlider;
+@property (nonatomic, retain) IBOutlet UIButton *triggerPopOver;
+@property (nonatomic, retain) IBOutlet UIView *thumbView;
+@property (nonatomic, retain) IBOutlet UILabel *thumbViewLabel;
+@property (nonatomic, retain) IBOutlet UIImageView *thumbNailImage;
+
+-(IBAction) sliderChanged: (id) sender;
+-(IBAction) showPopOver: (id) sender;
+-(IBAction) endSlideAction: (id) sender;
+-(IBAction) startSlideAction: (id) sender;
+
 
 @end
