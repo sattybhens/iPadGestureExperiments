@@ -12,7 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="55"/>
+			<integer value="2"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -53,7 +53,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<float key="IBUIValue">1</float>
 						<float key="IBUIMinValue">1</float>
-						<float key="IBUIMaxValue">30</float>
+						<float key="IBUIMaxValue">29</float>
 					</object>
 					<object class="IBUIImageView" id="73652389">
 						<reference key="NSNextResponder" ref="766721923"/>
@@ -152,10 +152,6 @@
 						<int key="IBUIContentMode">11</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">left-tracker.png</string>
-						</object>
 					</object>
 					<object class="IBUIImageView" id="127441849">
 						<reference key="NSNextResponder" ref="766721923"/>
@@ -166,10 +162,6 @@
 						<int key="IBUIContentMode">11</int>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
-						<object class="NSCustomResource" key="IBUIImage">
-							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">right-tracker.png</string>
-						</object>
 					</object>
 				</object>
 				<string key="NSFrameSize">{1024, 748}</string>
@@ -388,7 +380,7 @@
 					<string>SlideViewController</string>
 					<string>UIResponder</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-					<string>{{7, 88}, {1024, 768}}</string>
+					<string>{{7, 91}, {1024, 768}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>{{117, 466}, {300, 300}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -785,19 +777,8 @@
 		<string key="IBDocument.LastKnownRelativeProjectPath">iPadGestureExperiments.xcodeproj</string>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<bool key="EncodedWithXMLCoder">YES</bool>
-			<object class="NSArray" key="dict.sortedKeys">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>Slide4.jpg</string>
-				<string>left-tracker.png</string>
-				<string>right-tracker.png</string>
-			</object>
-			<object class="NSMutableArray" key="dict.values">
-				<bool key="EncodedWithXMLCoder">YES</bool>
-				<string>{960, 720}</string>
-				<string>{7, 16}</string>
-				<string>{7, 16}</string>
-			</object>
+			<string key="NS.key.0">Slide4.jpg</string>
+			<string key="NS.object.0">{960, 720}</string>
 		</object>
 		<string key="IBCocoaTouchPluginVersion">117</string>
 	</data>

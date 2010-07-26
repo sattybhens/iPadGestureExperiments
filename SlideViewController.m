@@ -51,18 +51,22 @@
   
 	if (pop.popoverVisible == YES) {
 		[pop dismissPopoverAnimated:NO];
-		NSLog(@"Dismissing");
 	}
 		
 	CGRect popoverRect = [slider frame];
-	NSLog(@"%@", NSStringFromCGRect(popoverRect));
-	popoverRect.origin.x += (slider.value * 13);
-	popoverRect.size.width = 1;
+	NSLog(@"UISlide Frame is %@", NSStringFromCGRect(popoverRect));
+
+	
+	popoverRect.origin.x += (slider.value* 14.48) -14.48;
+	popoverRect.size.width = 23;
+	NSLog(@"Updated to %@ for value = %0.1f", NSStringFromCGRect(popoverRect), slider.value);
+	
 	[pop presentPopoverFromRect:popoverRect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
 	
 	
   // NSLog(@"MinimumValue %.1f", slider.minimumValue);
   // NSLog(@"MaximumValue %.1f", slider.maximumValue);
+  // NSLog(@"ImageWidth %.1f", slider.currentThumbImage.size.width);
   thumbViewLabel.text = [NSString stringWithFormat:@"%.0f of 30", slider.value];
   
   //int r = (rand() % 6) +1;
