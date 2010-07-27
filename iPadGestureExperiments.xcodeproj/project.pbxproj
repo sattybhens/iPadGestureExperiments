@@ -19,6 +19,7 @@
 		2893B1B0114F14E60094356F /* tap.png in Resources */ = {isa = PBXBuildFile; fileRef = 2893B1AD114F14E60094356F /* tap.png */; };
 		7E9551A811765C360003D25C /* GestureRecognizerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9551A411765C360003D25C /* GestureRecognizerViewController.xib */; };
 		7E9551A911765C360003D25C /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7E9551A611765C360003D25C /* MainWindow.xib */; };
+		FA2C272D11FE5FFC00CC4F9C /* tracker.png in Resources */ = {isa = PBXBuildFile; fileRef = FA2C272C11FE5FFC00CC4F9C /* tracker.png */; };
 		FA574F8111F4C85400A5D98D /* SlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA574F7F11F4C85400A5D98D /* SlideViewController.m */; };
 		FA574F8211F4C85400A5D98D /* SlideViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA574F8011F4C85400A5D98D /* SlideViewController.xib */; };
 		FA574F9A11F4E54300A5D98D /* iPadGesturesExperiments.pptx in Resources */ = {isa = PBXBuildFile; fileRef = FA574F9911F4E54300A5D98D /* iPadGesturesExperiments.pptx */; };
@@ -55,6 +56,7 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7E9551A511765C360003D25C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/GestureRecognizerViewController.xib; sourceTree = "<group>"; };
 		7E9551A711765C360003D25C /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		FA2C272C11FE5FFC00CC4F9C /* tracker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tracker.png; sourceTree = "<group>"; };
 		FA574F7E11F4C85400A5D98D /* SlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SlideViewController.h; path = ../SlideViewController.h; sourceTree = "<group>"; };
 		FA574F7F11F4C85400A5D98D /* SlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SlideViewController.m; path = ../SlideViewController.m; sourceTree = "<group>"; };
 		FA574F8011F4C85400A5D98D /* SlideViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SlideViewController.xib; sourceTree = "<group>"; };
@@ -95,9 +97,10 @@
 			isa = PBXGroup;
 			children = (
 				FA574F7E11F4C85400A5D98D /* SlideViewController.h */,
+				FA574F7F11F4C85400A5D98D /* SlideViewController.m */,
 				FAE5273011FB46C800329AFB /* ThumbnailViewController.h */,
 				FAE5273111FB46C800329AFB /* ThumbnailViewController.m */,
-				FA574F7F11F4C85400A5D98D /* SlideViewController.m */,
+				FA2C272C11FE5FFC00CC4F9C /* tracker.png */,
 				2893B1A1114F14CA0094356F /* GestureRecognizerViewController.h */,
 				2893B1A2114F14CA0094356F /* GestureRecognizerViewController.m */,
 				2893B1A3114F14CA0094356F /* SimpleGestureRecognizersAppDelegate.h */,
@@ -242,6 +245,7 @@
 				FAA5BEFF11F5EC3E0055033F /* AppsViewController.xib in Resources */,
 				FAA5BF7511F615850055033F /* BaseViewController.xib in Resources */,
 				FAE5273411FB46C800329AFB /* ThumbnailViewController.xib in Resources */,
+				FA2C272D11FE5FFC00CC4F9C /* tracker.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

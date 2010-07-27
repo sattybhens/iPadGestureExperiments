@@ -12,15 +12,12 @@
 @interface SlideViewController : UIViewController <UIGestureRecognizerDelegate, UIPopoverControllerDelegate> {
 	UITapGestureRecognizer *tapRecognizer;
 	UISwipeGestureRecognizer *swipeRecognizer;
-	UIImageView *slideImageView;
+	UIImageView *slideImage;
 	UIImageView *tapImageView;
   UISlider *trackSlider;
-  UIButton *triggerPopOver;
-  UIView *thumbView;
-  UILabel *thumbViewLabel;
-  UIImageView *thumbNailImage;
+  UILabel *pageXOfYLabel;
 	BOOL sliderMoving;
-	UIViewController *thumb;
+	UIViewController *thumbnailView;
 	UIPopoverController *pop;
 }
 
@@ -28,15 +25,13 @@
 @property (nonatomic, retain) UISwipeGestureRecognizer *swipeRecognizer;
 @property (nonatomic, retain) UIImageView *tapImageView;
 
-@property (nonatomic, retain) UIViewController *thumb;
+@property (nonatomic, retain) UIViewController *thumbnailView;
 @property (nonatomic, retain) UIPopoverController *pop;
 
-@property (nonatomic, retain) IBOutlet UIImageView *slideImageView;
+@property (nonatomic, retain) IBOutlet UIImageView *slideImage;
 @property (nonatomic, retain) IBOutlet UISlider *trackSlider;
-@property (nonatomic, retain) IBOutlet UIButton *triggerPopOver;
-@property (nonatomic, retain) IBOutlet UIView *thumbView;
-@property (nonatomic, retain) IBOutlet UILabel *thumbViewLabel;
-@property (nonatomic, retain) IBOutlet UIImageView *thumbNailImage;
+@property (nonatomic, retain) IBOutlet UILabel *pageXOfYLabel;
+
 @property BOOL sliderMoving;
 
 -(IBAction) sliderChanged: (id) sender;

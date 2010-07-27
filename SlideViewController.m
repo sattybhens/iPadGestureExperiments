@@ -14,12 +14,22 @@
 
 @implementation SlideViewController
 
-@synthesize swipeRecognizer, tapRecognizer, slideImageView, tapImageView, trackSlider, triggerPopOver;
-@synthesize thumbView, thumbViewLabel, thumbNailImage;
-@synthesize sliderMoving, thumb, pop;
+// from xib file
+@synthesize slideImage, trackSlider, pageXOfYLabel;
+
+@synthesize swipeRecognizer, tapRecognizer, tapImageView;
+@synthesize sliderMoving, thumbnailView, pop;
 
 #pragma mark -
 #pragma mark Responding to UISlider
+
+-(IBAction) startSlideAction: (id) sender {
+  UISlider *slider = (UISlider *)sender;
+  NSLog(@"startSlideAction %.1f", slider.value);
+  //thumbView.hidden = NO;
+	
+	sliderMoving = YES;  
+}
 
 -(IBAction) endSlideAction: (id) sender {
   UISlider *slider = (UISlider *)sender;
@@ -31,23 +41,11 @@
 		[pop dismissPopoverAnimated:NO];
 		NSLog(@"Dismissing");
 	}
-	
-
 }
 
--(IBAction) startSlideAction: (id) sender {
-  UISlider *slider = (UISlider *)sender;
-  NSLog(@"startSlideAction %.1f", slider.value);
-  //thumbView.hidden = NO;
-	
-	sliderMoving = YES;
-
-}
 
 -(IBAction) sliderChanged: (id) sender {
   UISlider *slider = (UISlider *)sender;
-  
-	//NSLog(@"Popped");
   
 	if (pop.popoverVisible == YES) {
 		[pop dismissPopoverAnimated:NO];
@@ -61,20 +59,13 @@
 	popoverRect.size.width = 23;
 	NSLog(@"Updated to %@ for value = %0.1f", NSStringFromCGRect(popoverRect), slider.value);
 	
-	[pop presentPopoverFromRect:popoverRect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
+	[pop presentPopoverFromRect:popoverRect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:NO];
 	
-	
-  // NSLog(@"MinimumValue %.1f", slider.minimumValue);
-  // NSLog(@"MaximumValue %.1f", slider.maximumValue);
-  // NSLog(@"ImageWidth %.1f", slider.currentThumbImage.size.width);
-  thumbViewLabel.text = [NSString stringWithFormat:@"%.0f of 30", slider.value];
+  pageXOfYLabel.text = [NSString stringWithFormat:@"%.0f of 30", slider.value];
   
   //int r = (rand() % 6) +1;
   //NSString  *imageName = [NSString stringWithFormat:@"Slide%d.jpg",r];  
-
-  //thumbNailImage.image = [UIImage imageNamed:imageName];
 }
-
 
 #pragma mark -
 #pragma mark Creating a UIPopOver
@@ -88,25 +79,6 @@
   NSLog(@"popoverControllerDidDismissPopover");
 	
 }
-
--(IBAction) showPopOver: (id) sender {
-  
-  NSLog(@"Popped");
-  UIButton *btn = sender;
-  UISlider *slider = sender;
-  
-  //ThumbnailViewController *thumb = [[ThumbnailViewController alloc] initWithNibName:@"ThumbnailViewController" bundle:nil];
-  //thumb.delegate = self; // setup code for your embedded view controller
-  
-  UIPopoverController *pop = [[UIPopoverController alloc] initWithContentViewController:thumb];
-  
-  // pop delegate = self; if UIPopOverControllerDelegate protocol
-  [pop setPopoverContentSize:thumb.view.frame.size];
-
-  CGRect popoverRect = [slider frame];
-  [pop presentPopoverFromRect:popoverRect inView:self.view permittedArrowDirections:UIPopoverArrowDirectionDown animated:YES];
-}
-
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -125,11 +97,11 @@
 	
 	sliderMoving = NO;
 	
-	thumb = [[ThumbnailViewController alloc] initWithNibName:@"ThumbnailViewController" bundle:nil];
+	thumbnailView = [[ThumbnailViewController alloc] initWithNibName:@"ThumbnailViewController" bundle:nil];
 	
-	pop = [[UIPopoverController alloc] initWithContentViewController:thumb];
+	pop = [[UIPopoverController alloc] initWithContentViewController:thumbnailView];
   pop.delegate = self; //if UIPopOverControllerDelegate protocol
-	[pop setPopoverContentSize:thumb.view.frame.size];
+	[pop setPopoverContentSize:thumbnailView.view.frame.size];
 
 
   self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
@@ -141,18 +113,18 @@
 	self.tapRecognizer = (UITapGestureRecognizer *)recognizer;
 	recognizer.delegate = self;
 	[recognizer release];
+		
+//	recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
+//	[self.view addGestureRecognizer:recognizer];
+//	self.swipeRecognizer = (UISwipeGestureRecognizer *)recognizer;
+//	[recognizer release];
 	
-	
-	// recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeFrom:)];
-	// [self.view addGestureRecognizer:recognizer];
-	// [recognizer release];
-	
-	recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationFrom:)];
-	[self.view addGestureRecognizer:recognizer];
-	[recognizer release];
+//	recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotationFrom:)];
+//	[self.view addGestureRecognizer:recognizer];
+//	[recognizer release];
 			
-	slideImageView.image = [UIImage imageNamed:@"Slide1.jpg"];
-	slideImageView.alpha = 1.0;
+	slideImage.image = [UIImage imageNamed:@"Slide1.jpg"];
+	slideImage.alpha = 1.0;
 	
 	/*
 	 Create an image view to display the gesture description.
@@ -163,14 +135,14 @@
 	[anImageView release];
 	[self.view addSubview:tapImageView];
 
-  //UIImage *sliderLeftTrackImage = [[UIImage imageNamed: @"left-tracker.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
-  //UIImage *sliderRightTrackImage = [[UIImage imageNamed: @"right-tracker.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
-  //[trackSlider setMinimumTrackImage: sliderLeftTrackImage forState: UIControlStateNormal];
-  //[trackSlider setMaximumTrackImage: sliderRightTrackImage forState: UIControlStateNormal];
+  // UIImage *sliderLeftTrackImage = [[UIImage imageNamed: @"left-tracker.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+  // UIImage *sliderRightTrackImage = [[UIImage imageNamed: @"right-tracker.png"] stretchableImageWithLeftCapWidth: 9 topCapHeight: 0];
+  // [trackSlider setMinimumTrackImage: sliderLeftTrackImage forState: UIControlStateNormal];
+  // [trackSlider setMaximumTrackImage: sliderRightTrackImage forState: UIControlStateNormal];
   
-  // UIImage *trackImage = [UIImage imageNamed: @"tracker.png"];
-  // [trackSlider setThumbImage: trackImage forState: UIControlStateNormal];
-  // [trackImage release];
+  UIImage *trackImage = [UIImage imageNamed: @"tracker.png"];
+  [trackSlider setThumbImage: trackImage forState: UIControlStateNormal];
+  [trackImage release];
   
 }
 
@@ -189,17 +161,6 @@
 }
 
 
-- (void)viewDidUnload {
-	[super viewDidUnload];
-	
-	self.tapRecognizer = nil;
-	self.swipeRecognizer = nil;
-	self.slideImageView = nil;
-	self.tapImageView = nil;
-	
-	// Release any retained subviews of the main view.
-	// e.g. self.myOutlet = nil;
-}
 
 #pragma mark -
 #pragma mark Responding to gestures
@@ -222,8 +183,16 @@
 	
 	CGPoint location = [recognizer locationInView:self.view];
 	[self showImageWithText:@"tap" atPoint:location];
-	tapImageView.alpha = 0.0;
-	  
+  
+  [UIView beginAnimations:nil context:nil];
+	tapImageView.alpha = 1.0;
+  [UIView setAnimationDuration:0.8];
+	tapImageView.alpha = 0.0;  
+  [UIView commitAnimations];
+}
+
+-(void)handleSlideChange {
+  
   CGContextRef context = UIGraphicsGetCurrentContext();
   [UIView beginAnimations:nil context:context];
   
@@ -237,9 +206,9 @@
   [UIView setAnimationDuration:0.8];
   
   // Below assumes you have two subviews that you're trying to transition between
-  slideImageView.alpha = 0.3;
-  slideImageView.image = [UIImage imageNamed:@"Slide2.jpg"];
-  slideImageView.alpha = 1.0;
+  slideImage.alpha = 0.3;
+  slideImage.image = [UIImage imageNamed:@"Slide2.jpg"];
+  slideImage.alpha = 1.0;
 
   [UIView commitAnimations];
 }
@@ -247,16 +216,31 @@
 #pragma mark -
 #pragma mark Memory management
 
+- (void)viewDidUnload {
+	[super viewDidUnload];
+	
+	self.tapRecognizer = nil;
+	self.swipeRecognizer = nil;
+	self.slideImage = nil;
+	self.tapImageView = nil;
+	self.pop = nil;
+	self.thumbnailView = nil;
+	
+	// Release any retained subviews of the main view.
+	// e.g. self.myOutlet = nil;
+}
+
 - (void)dealloc {
 	
 	[tapRecognizer release];
 	[swipeRecognizer release];
-	[slideImageView release];
+	[slideImage release];
 	[tapImageView release];
+  
 	[pop release];
-	[thumb release];
+	[thumbnailView release];
+  
 	[super dealloc];
 }
-
 
 @end
