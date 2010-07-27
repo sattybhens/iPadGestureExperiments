@@ -8,6 +8,7 @@
 
 #import "SlideViewController.h"
 #import "ThumbnailViewController.h"
+#import "QuartzCore/QuartzCore.h"
 
 
 #include <stdlib.h>
@@ -98,10 +99,13 @@
 	sliderMoving = NO;
 	
 	thumbnailView = [[ThumbnailViewController alloc] initWithNibName:@"ThumbnailViewController" bundle:nil];
+	thumbnailView.view.layer.backgroundColor = [UIColor whiteColor].CGColor;
+
 	
 	pop = [[UIPopoverController alloc] initWithContentViewController:thumbnailView];
   pop.delegate = self; //if UIPopOverControllerDelegate protocol
 	[pop setPopoverContentSize:thumbnailView.view.frame.size];
+	
 
 
   self.view.autoresizingMask = (UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight);
